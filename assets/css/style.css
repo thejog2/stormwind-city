@@ -1,0 +1,71 @@
+/* Global Reset (optional but helpful) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Theme Colors */
+:root {
+    --stormwind-blue: #1e3a8a;
+    --stormwind-gold: #d4af37;
+    --light-bg: #f8f9fa;
+    --dark-text: #1a1a1a;
+}
+
+/* Layout Helpers */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+header {
+    background-color: var(--stormwind-blue);
+    color: white;
+    padding: 1rem 0;
+}
+.site-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+nav a {
+    color: var(--stormwind-gold);
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+
+main {
+    background-image: url("../images/stormwindoverview.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3rem 1rem;
+    min-height: 80vh; /* ensures the image is visible even on short pages */
+}
+
+/* Footer */
+footer {
+    background-color: var(--stormwind-blue);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Hero Section */
+.hero {
+    padding: 3rem 1rem;
+    text-align: center;
+}
