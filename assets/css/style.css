@@ -1,8 +1,8 @@
 /* Global Reset (optional but helpful) */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 /* Basic Theme Colors */
@@ -20,6 +20,23 @@
     padding: 0 1rem;
 }
 
+html,
+body {
+    height: 100%;
+}
+
+/* Body Styles */
+
+body {
+    background-image: url("../images/stormwindoverview.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Header */
 header {
     background-color: var(--stormwind-blue);
@@ -27,32 +44,54 @@ header {
     padding: 1rem 0;
 }
 .site-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    text-align: center;
     margin-bottom: 0.5rem;
 }
 nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    margin-top: 1rem;
     list-style: none;
-    display: flex;
-    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
 }
 nav a {
     color: var(--stormwind-gold);
     text-decoration: none;
     font-weight: bold;
+    font-size: 1rem;
 }
 nav a:hover {
     text-decoration: underline;
 }
 
+/* Hide the checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* When checkbox is checked, show the menu */
+#menu-toggle:checked + .menu-icon + nav ul {
+    display: flex;
+}
+
+/* Hamburger icon */
+.menu-icon {
+    font-size: 2rem;
+    color: var(--stormwind-gold);
+    cursor: pointer;
+    display: block;
+    text-align: right;
+    padding: 0.5rem;
+}
+
 /* Main Content */
 
 main {
-    background-image: url("../images/stormwindoverview.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 3rem 1rem;
-    min-height: 80vh; /* ensures the image is visible even on short pages */
+    flex: 1; /* pushes footer to bottom */
 }
 
 /* Footer */
@@ -66,6 +105,41 @@ footer {
 
 /* Hero Section */
 .hero {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
     text-align: center;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and larger screens */
+
+@media (min-width: 600px) {
+    nav ul {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 0;
+    }
+    .site-title {
+        font-size: 2rem;
+    }
+    /* Hide hamburger icon */
+    .menu-icon {
+        display: none;
+    }
+}
+
+/* Desktops and larger screens */
+
+@media (min-width: 900px) {
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .site-title {
+        margin-bottom: 0;
+        text-align: left;
+    }
 }
